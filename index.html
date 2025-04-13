@@ -1,8 +1,10 @@
-<html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notaría Ignacia Salcedo Ramírez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+  <title>Bienvenido a la Notaría Ignacia Salcedo Ramírez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -11,6 +13,30 @@
       background: linear-gradient(to bottom right, #fff8e1, #ffe082);
       color: #333;
       overflow-x: hidden;
+    }
+    .loader-screen {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: #ffcc00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    .loader-icon {
+      font-size: 48px;
+      animation: pulse 1s infinite;
+      margin-bottom: 15px;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
     }
     header {
       background: #ffcc00;
@@ -137,7 +163,6 @@
       color: #ffd700;
       text-decoration: underline;
     }
-
     @keyframes slideFade {
       0% { opacity: 0; transform: translateY(-50px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -154,58 +179,67 @@
 </head>
 <body>
 
-  <header>
-    <h1>Notaría Ignacia Salcedo Ramírez</h1>
-    <p>Comprometidos con la legalidad, la confianza y el servicio notarial en Renca</p>
-  </header>
+<div class="loader-screen" id="loader">
+  <div class="loader-icon"><i class="fas fa-university"></i></div>
+  Ingresando a Notaría Ignacia Salcedo Ramírez...
+</div>
 
-  <section class="hero">
-    <img src="https://safeboxsigning.com/wp-content/uploads/2020/05/role-of-notary.png" alt="Imagen de notaría profesional">
-    <div class="hero-text">
-      <h2>Verificación rápida y segura de documentos</h2>
-      <p>Ingrese su código único y confirme la autenticidad de documentos emitidos por nuestra notaría. Este servicio está disponible 24/7 para brindarle seguridad, confianza y transparencia.</p>
-      <a href="https://notariaignaciasalcedoramirez.github.io/validador.cl" target="_blank">
-        <i class="fa fa-check-circle"></i> Validar documento aquí
-      </a>
-    </div>
-  </section>
+<header>
+  <h1>Notaría Ignacia Salcedo Ramírez</h1>
+  <p>Comprometidos con la legalidad, la confianza y el servicio notarial en Renca</p>
+</header>
 
-  <section class="testimonio">
-    <blockquote>“Un servicio notarial eficiente, claro y confiable. Recomendado al 100%.”</blockquote>
-    <p>— María González, escritura de compraventa</p>
+<section class="hero">
+  <img src="https://safeboxsigning.com/wp-content/uploads/2020/05/role-of-notary.png" alt="Imagen de notaría profesional">
+  <div class="hero-text">
+    <h2>Verificación rápida y segura de documentos</h2>
+    <p>Ingrese su código único y confirme la autenticidad de documentos emitidos por nuestra notaría. Este servicio está disponible 24/7 para brindarle seguridad, confianza y transparencia.</p>
+    <a href="https://notariaignaciasalcedoramirez.github.io/validador.cl" target="_blank">
+      <i class="fa fa-check-circle"></i> Validar documento aquí
+    </a>
+  </div>
+</section>
 
-    <blockquote>“Realicé un poder notarial y el proceso fue rápido, con excelente atención. Muy profesionales.”</blockquote>
-    <p>— Jorge Ramírez, poder simple</p>
+<section class="testimonio">
+  <blockquote>“Un servicio notarial eficiente, claro y confiable. Recomendado al 100%.”</blockquote>
+  <p>— María González, escritura de compraventa</p>
+  <blockquote>“Realicé un poder notarial y el proceso fue rápido, con excelente atención. Muy profesionales.”</blockquote>
+  <p>— Jorge Ramírez, poder simple</p>
+  <blockquote>“Solicité una autorización de viaje para mi hijo. Me orientaron en todo momento y el trámite fue ágil.”</blockquote>
+  <p>— Fernanda Soto, autorización notarial</p>
+  <blockquote>“Tuve que firmar un contrato de arriendo y todo fue muy claro. Me explicaron cada parte del documento.”</blockquote>
+  <p>— Daniel Reyes, contrato de arriendo</p>
+  <blockquote>“Necesitaba legalizar documentos para el extranjero. El equipo fue muy amable y rápido.”</blockquote>
+  <p>— Carolina Fuentes, legalización de documentos</p>
+  <blockquote>“Fui por una declaración jurada simple y me sorprendió la rapidez del proceso. Volveré sin duda.”</blockquote>
+  
+</section>
 
-    <blockquote>“Solicité una autorización de viaje para mi hijo. Me orientaron en todo momento y el trámite fue ágil.”</blockquote>
-    <p>— Fernanda Soto, autorización notarial</p>
+<section class="formulario">
+  <h3>Contacto Rápido</h3>
+  <form action="https://formspree.io/f/xvoebzkv" method="POST">
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="correo" placeholder="Tu correo electrónico" required>
+    <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</section>
 
-    <blockquote>“Tuve que firmar un contrato de arriendo y todo fue muy claro. Me explicaron cada parte del documento.”</blockquote>
-    <p>— Daniel Reyes, contrato de arriendo</p>
+<footer>
+  <p>Notaría Ignacia Salcedo Ramírez | Esmeralda 1463, depto 314, Renca, Santiago de Chile<br>
+  Correo: notariaignaciasalcedoramirez@gmail.com</p>
+  <p><a href="https://drive.usercontent.google.com/u/0/uc?id=1syt7cHOpthLlDs9VF30qT-qWNykRpC4S&export=download" target="_blank">Política de Privacidad</a></p>
+</footer>
 
-    <blockquote>“Necesitaba legalizar documentos para el extranjero. El equipo fue muy amable y rápido.”</blockquote>
-    <p>— Carolina Fuentes, legalización de documentos</p>
+<script>
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '0';
+      setTimeout(() => loader.style.display = 'none', 1000);
+    }, 3000);
+  });
+</script>
 
-    <blockquote>“Fui por una declaración jurada simple y me sorprendió la rapidez del proceso. Volveré sin duda.”</blockquote>
-    <p>— Esteban Vega, declaración jurada</p>
-  </section>
-
-  <section class="formulario">
-    <h3>Contacto Rápido</h3>
-    <form action="https://formspree.io/f/xvoebzkv" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required="">
-      <input type="email" name="correo" placeholder="Tu correo electrónico" required="">
-      <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required=""></textarea>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>Notaría Ignacia Salcedo Ramírez | Esmeralda 1463, depto 314, Renca, Santiago de Chile<br>
-    Correo: notariaignaciasalcedoramirez@gmail.com</p>
-    <p><a href="https://drive.usercontent.google.com/u/0/uc?id=1syt7cHOpthLlDs9VF30qT-qWNykRpC4S&amp;export=download" target="_blank">Política de Privacidad</a></p>
-  </footer>
-
-
-
-</body></html>
+</body>
+</html>
